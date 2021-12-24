@@ -1,1 +1,1 @@
-# WebDprojects
+# The web devlopement practice projects.
