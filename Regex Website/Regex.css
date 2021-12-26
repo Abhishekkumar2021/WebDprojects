@@ -1,0 +1,143 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+   
+}
+
+
+.container{
+    width:100%;
+    min-height:100%;
+     font-family:Montserrat;
+    color:white;
+   
+}
+.center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    position:sticky;
+    top:0;
+    padding:20px;
+    text-align: center;
+    background:rgb(76, 83, 124);
+    color:rgb(255, 255, 255);
+    font-size:40px;
+    box-shadow:0 10px 50px rgba(3, 100, 100, 0.356);
+    z-index:100;
+   
+}
+.content{
+    font-size:20px;
+    max-width:1500px;
+    width:80%;
+    margin:0 auto;
+    padding:30px;
+}
+p{
+    color:navy;
+    margin:5px 0;
+    line-height:1.3;
+    width:100%;padding:20px;
+    border-radius:10px;
+     font-family: sans-serif
+}
+pre{
+    margin:10px 0;
+    width:100%;
+    font-size:25px;
+    box-shadow:0px 0px 25px rgba(15, 15, 15, 0.159);
+     border-radius:20px;
+     border-left:10px solid rgb(4, 182, 182);
+
+}
+pre code.hljs {
+    border-radius:20px;
+   
+}
+
+code.hljs {
+    padding: 3px 5px
+}
+
+code{
+    font-family:Fira Code;
+}
+.title{
+    transform:translateY(40px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.164);
+    color:rgb(4, 69, 85);
+    max-width:50%;
+    background:white;
+    border-left:5px solid rgb(4, 182, 182);
+    padding:10px;
+    margin:5px auto;
+    font-size:30px;
+    z-index:0;
+    border-radius:10px;
+    font-family:Fira Code;
+    text-shadow: 5px 5px 2px rgba(2, 2, 2, 0.158);
+}
+span{
+    font-size:30px;
+    padding:5px 0;
+    font-family: Fira Code;
+    color:rgb(136, 14, 14);
+}
+
+.output{
+    position:relative;
+    border-radius: 10px;
+    padding:0 20px;
+    width:80%;
+    margin:0 auto;
+    color:orange;
+    font-family:Fira Code;
+    font-size:25px;
+    transform:translateY(-40px);
+    background:white;
+    box-shadow:0px 0px 40px rgb(0, 0, 0, 0.15);
+    border-left:5px solid orange;
+}
+.output::after{
+    content: "Output";
+    position: absolute;
+    width:14%;text-align:center;
+    padding: 20px;
+    background:orange;
+    color:white;margin:10px;
+    right:0;
+    top:0;
+    border-radius:10px ;
+    box-shadow:-20px -10px 30px  rgba(128, 128, 128, 0.336);
+
+}
+.animatedBall{
+    position:fixed;
+    width:50px;
+    height:50px;
+    background:teal;
+    border-radius:50%;
+    bottom:10px;
+    left:10px;
+    animation:animation 5s linear infinite;
+    z-index:-1;
+}
+@keyframes animation{
+    0%{
+        transform:scale(1);
+        left:0px;
+        bottom:0px;
+    }
+    50%{
+        transform:scale(50);
+    }
+    100%{
+        transform:scale(1);
+        left:1920px;
+        bottom: 900px;
+    }
+}
