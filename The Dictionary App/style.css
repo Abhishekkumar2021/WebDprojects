@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,900;1,700&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Rubik", sans-serif;
+}
+body {
+	background: white;
+}
+nav {
+	position: sticky;
+	top: 0;
+	color: rgb(255, 174, 0);
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: white;
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.123);
+	z-index: 200;
+}
+
+nav .logo {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+nav .logo .icon {
+	font-size: 60px;
+}
+nav .logo .header {
+	font-size: 30px;
+	margin-left: 20px;
+}
+span {
+	color: rgb(31, 197, 226);
+	font-size: 45px;
+	font-family: cursive;
+}
+.search {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.search input {
+	font-size: 30px;
+	padding: 10px 15px;
+	border-radius: 5px;
+	border: 0.1px solid gray;
+	padding-left: 10px;
+	transition: 2s ease all;
+	outline: none;
+	border: none;
+	box-shadow: 2px 2px 3px rgba(7, 7, 7, 0.185);
+}
+.search i {
+	font-size: 30px;
+	background: white;
+	padding: 12px;
+	margin: 4px;
+	border-radius: 5px;
+	color: black;
+	box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.123);
+}
+
+.search i:hover {
+	background: rgb(230, 238, 237);
+}
+.search i:active {
+	transform: scale(0.9);
+	transition: 0.1s ease all;
+}
+
+.container {
+	display: flex;
+	justify-content: space-evenly;
+	width: 1200px;
+	height: auto;
+	max-width: 90%;
+	margin: 30px auto;
+	border-radius: 10px;
+	border: 0.01px solid rgba(255, 255, 255, 0.404);
+	background: rgba(255, 255, 255, 0.199);
+	backdrop-filter: blur(1px);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.123);
+	padding: 20px;
+	flex-wrap: wrap;
+}
+.word,
+.audio,
+.origin,
+.part-of-speech,
+.synonyms,
+.antonyms,
+.definition,
+.example {
+	font-size: 30px;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	min-height: 17vh;
+	align-items: center;
+	margin: 10px;
+	width: 300px;
+	flex-grow: 1;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.123);
+	transition: 1s ease all;
+}
+.head {
+	padding: 10px;
+	border-bottom: 1px solid white;
+	background: rgb(3, 40, 82);
+	width: 100%;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+	text-transform: uppercase;
+	color: white;
+}
+.content,
+.antonyms .content {
+	flex-grow: 1;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	font-size: 20px;
+}
+.word,
+.part-of-speech {
+	text-transform: capitalize;
+}
+.part-of-speech,
+.synonyms,
+.antonyms,
+.definition {
+	width: 400px;
+}
+.definition .content,
+.synonyms .content,
+.antonyms .content,
+.example .content {
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+li {
+	margin: 2px;
+}
+
+.word:hover:hover,
+.audio:hover,
+.origin:hover,
+.part-of-speech:hover,
+.synonyms:hover,
+.antonyms:hover,
+.definition:hover,
+.example:hover:hover {
+	transform: scale(1.04);
+	z-index: 100;
+}
+
+@media screen and (max-width: 768px) {
+	nav {
+		flex-direction: column;
+	}
+
+	nav .logo .icon {
+		font-size: 40px;
+	}
+
+	nav .logo .header {
+		font-size: 25px;
+		margin-left: 10px;
+	}
+
+	.search input {
+		font-size: 25px;
+	}
+
+	.search i {
+		font-size: 25px;
+		background: white;
+		padding: 12px;
+		border-radius: 5px;
+		color: black;
+		margin: 5px;
+		box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.123);
+	}
+}
