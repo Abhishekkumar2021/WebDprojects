@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>snake and ladder</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.center {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				align-content: center;
+			}
+			.container {
+				padding: 20px;
+				width: 100vw;
+				height: 100vh;
+				flex-wrap: wrap;
+			}
+			.board {
+				width: 800px;
+				height: 800px;
+				box-shadow: 0 0 50px rgba(0, 0, 0, 0.144);
+				flex-wrap: wrap;
+				border-radius: 10px;
+			}
+			.box {
+				border-radius: 5px;
+				width: 80px;
+				height: 80px;
+				background: yellow;
+				border: 0.1px solid white;
+				font-family: Fira Code;
+				font-weight: 200;
+			}
+			.card-container {
+				height: 800px;
+				width: 800px;
+
+				flex-direction: column;
+			}
+			.number {
+				width: 60%;
+				height: 60%;
+				box-shadow: 0 0 40px rgba(0, 0, 0, 0.151);
+				border-radius: 20px;
+				font-size: 250px;
+			}
+			.button {
+				width: 150px;
+				height: 50px;
+				border: 2px solid teal;
+				border-radius: 10px;
+				transform: translateY(20px);
+				font-family: Montserrat;
+				cursor: pointer;
+				text-align: center;
+			}
+			.button:active {
+				background: teal;
+				color: white;
+			}
+			.object {
+				position: absolute;
+				background: transparent;
+				width: 60px;
+				height: 60px;
+				top: 100px;
+				left: 170px;
+				border-radius: 5px;
+				font-size: 45px;
+			}
+			.winning {
+				position: absolute;
+				width: 100vw;
+				color: teal;
+				height: 100vh;
+				font-size: 90px;
+				background: white;
+				z-index: 200;
+				text-shadow: 30px 20px 10px rgba(0, 0, 0, 0.568);
+			}
+			.hide {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container center">
+			<div class="board center">
+				<div class="object center"> 👮‍♂️ </div>
+				<div class="box center">1</div>
+				<div class="box center">2</div>
+				<div class="box center">3</div>
+				<div class="box center">4</div>
+				<div class="box center">5</div>
+				<div class="box center">6</div>
+				<div class="box center">7</div>
+				<div class="box center">8</div>
+				<div class="box center">9</div>
+				<div class="box center">10</div>
+				<div class="box center">11</div>
+				<div class="box center">12</div>
+				<div class="box center">13</div>
+				<div class="box center">14</div>
+				<div class="box center">15</div>
+				<div class="box center">16</div>
+				<div class="box center">17</div>
+				<div class="box center">18</div>
+				<div class="box center">19</div>
+				<div class="box center">20</div>
+				<div class="box center">21</div>
+				<div class="box center">22</div>
+				<div class="box center">23</div>
+				<div class="box center">24</div>
+				<div class="box center">25</div>
+				<div class="box center">26</div>
+				<div class="box center">27</div>
+				<div class="box center">28</div>
+				<div class="box center">29</div>
+				<div class="box center">30</div>
+				<div class="box center">31</div>
+				<div class="box center">32</div>
+				<div class="box center">33</div>
+				<div class="box center">34</div>
+				<div class="box center">35</div>
+				<div class="box center">36</div>
+				<div class="box center">37</div>
+				<div class="box center">38</div>
+				<div class="box center">39</div>
+				<div class="box center">40</div>
+				<div class="box center">41</div>
+				<div class="box center">42</div>
+				<div class="box center">43</div>
+				<div class="box center">44</div>
+				<div class="box center">45</div>
+				<div class="box center">46</div>
+				<div class="box center">47</div>
+				<div class="box center">48</div>
+				<div class="box center">49</div>
+				<div class="box center">50</div>
+				<div class="box center">51</div>
+				<div class="box center">52</div>
+				<div class="box center">53</div>
+				<div class="box center">54</div>
+				<div class="box center">55</div>
+				<div class="box center">56</div>
+				<div class="box center">57</div>
+				<div class="box center">58</div>
+				<div class="box center">59</div>
+				<div class="box center">60</div>
+				<div class="box center">61</div>
+				<div class="box center">62</div>
+				<div class="box center">63</div>
+				<div class="box center">64</div>
+				<div class="box center">65</div>
+				<div class="box center">66</div>
+				<div class="box center">67</div>
+				<div class="box center">68</div>
+				<div class="box center">69</div>
+				<div class="box center">70</div>
+				<div class="box center">71</div>
+				<div class="box center">72</div>
+				<div class="box center">73</div>
+				<div class="box center">74</div>
+				<div class="box center">75</div>
+				<div class="box center">76</div>
+				<div class="box center">77</div>
+				<div class="box center">78</div>
+				<div class="box center">79</div>
+				<div class="box center">80</div>
+				<div class="box center">81</div>
+				<div class="box center">82</div>
+				<div class="box center">83</div>
+				<div class="box center">84</div>
+				<div class="box center">85</div>
+				<div class="box center">86</div>
+				<div class="box center">87</div>
+				<div class="box center">88</div>
+				<div class="box center">89</div>
+				<div class="box center">90</div>
+				<div class="box center">91</div>
+				<div class="box center">92</div>
+				<div class="box center">93</div>
+				<div class="box center">94</div>
+				<div class="box center">95</div>
+				<div class="box center">96</div>
+				<div class="box center">97</div>
+				<div class="box center">98</div>
+				<div class="box center">99</div>
+				<div class="box center">100</div>
+			</div>
+			<div class="card-container center">
+				<div class="number center"> 1 </div>
+				<div class="button center"> Move your commander </div>
+			</div>
+			<div class="winning center hide"> </div>
+		</div>
+	</body>
+	<script>
+		const boxes = document.querySelectorAll(".box");
+		for (let i = 0; i < boxes.length; i++) {
+			boxes[i].style.background = randomColor();
+		}
+		function randomColor() {
+			const r = Math.floor(Math.random() * 256) + 1;
+			const g = Math.floor(Math.random() * 256) + 1;
+			const b = Math.floor(Math.random() * 256) + 1;
+			return `rgba(${r},${g},${b},0.1)`;
+		}
+		let steps = 0;
+		const man = document.querySelector(".object");
+		const button = document.querySelector(".button");
+		const card = document.querySelector(".number");
+		let current = 0;
+		const win = document.querySelector(".winning");
+		const body = document.querySelector("body");
+		const dangerPosition = [6, 11, 37, 33, 68, 92, 99];
+		const boosters = [13, 55, 73, 97];
+		for (let i = 0; i < dangerPosition.length; i++) {
+			boxes[dangerPosition[i] - 1].style.background = "rgb(255,0,0,0.6)";
+			boxes[dangerPosition[i] - 1].style.color = "white";
+		}
+		for (let i = 0; i < boosters.length; i++) {
+			boxes[boosters[i] - 1].style.background = "rgb(0,255,0,0.6)";
+			boxes[boosters[i] - 1].style.color = "white";
+		}
+		function isPresent(array, value) {
+			for (let i = 0; i < array.length; i++) {
+				if (array[i] === value) return true;
+			}
+			return false;
+		}
+		button.addEventListener("click", () => {
+			let number = Math.floor(Math.random() * 6) + 1;
+			card.innerHTML = number;
+
+			if (current + number < 100) {
+				steps++;
+				current += number;
+				card.style.background = randomColor();
+				const x = current % 10;
+				const y = parseInt(current / 10);
+				man.style.transform = `translate(${x * 80}px,${y * 80}px)`;
+			}
+			if (current == 99) {
+				win.innerHTML = `You have win the match in ${steps} steps.`;
+				win.classList.toggle("hide");
+				setTimeout(() => {
+					win.classList.toggle("hide");
+				}, 5000);
+				current = 0;
+			}
+			if (isPresent(dangerPosition, current + 1)) {
+				current = Math.floor(Math.random() * current);
+			}
+			if (isPresent(boosters, current + 1)) {
+				let num = 99 - current;
+				current += Math.floor(Math.random() * num);
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+		}
+		.check {
+			min-height: 100vh;
+			width: 100%;
+			background: rgba(165, 213, 233, 0.322);
+			min-height: 100vh;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			align-content: center;
+		}
+		.check h1 {
+			font-size: 80px;
+			background: white;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.384);
+			padding: 10px 20px;
+			border-radius: 10px;
+			max-width: 70%;
+			text-align: center;
+		}
+		.steps {
+			min-height: 100vh;
+			width: 100%;
+			background: rgb(3, 70, 97);
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			align-content: center;
+			padding: 30px;
+			font-size: 60px;
+			color: white;
+		}
+		span {
+			color: rgb(13, 133, 67);
+		}
+	</style>
+
+	<body>
+		<section class="check">
+			<h1>Enter a key to check whether it is working or not!</h1>
+		</section>
+		<section class="steps">
+			<h1>Steps you have performed</h1>
+			<ol id="steps"> </ol>
+		</section>
+		<script>
+			const body = document.querySelector("body");
+			body.addEventListener("keydown", (event) => {
+				const h1 = document.querySelector("h1");
+				h1.innerHTML = `You pressed " <span > ${event.code} </span>"`;
+				const ol = document.querySelector("#steps");
+				const li = document.createElement("li");
+				li.append(`You pressed " ${event.code} "`);
+				ol.append(li);
+				console.dir(event);
+			});
+			body.addEventListener("mouseover", (event) => {
+				console.dir(event);
+			});
+		</script>
+	</body>
+</html>

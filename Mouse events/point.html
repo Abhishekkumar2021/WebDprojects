@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Random Points</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+			}
+			body {
+				background: rgba(135, 207, 235, 0.151);
+				min-height: 100vh;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				align-content: center;
+			}
+			div {
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				background-color: aqua;
+				box-shadow: 0 0 5px gray;
+			}
+			h1 {
+				font-size: 80px;
+				background: white;
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.384);
+				padding: 10px 20px;
+				border-radius: 10px;
+				max-width: 90%;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Move your mouse Wherever you want</h1>
+		<script>
+			let count = 0;
+			body = document.querySelector("body");
+			body.addEventListener("mouseover", (event) => {
+				const div = document.createElement("div");
+				div.style.backgroundColor = randColor();
+				div.style.position = "absolute";
+				div.style.top = `${event.y - 30}px`;
+				div.style.left = `${event.x - 30}px`;
+				body.append(div);
+				count++;
+				const h1 = document.querySelector("h1");
+				h1.innerHTML = `${count} circles`;
+				h1.style.zIndex = 100;
+			});
+			body.addEventListener("click", (event) => {
+				const h1 = document.createElement("h1");
+				h1.style.position = "absolute";
+				h1.style.top = `${event.y}px`;
+				h1.style.left = `${event.x}px`;
+				h1.innerHTML = `( ${event.x}, ${event.y} )`;
+				body.append(h1);
+				setTimeout(() => {
+					h1.remove();
+				}, 500);
+			});
+
+			function randColor() {
+				const red = Math.floor(Math.random() * 256);
+				const green = Math.floor(Math.random() * 256);
+				const blue = Math.floor(Math.random() * 256);
+				const alpha = parseFloat(Math.random().toFixed(2));
+				return `rgb(${red}, ${green}, ${blue},${alpha})`;
+			}
+		</script>
+	</body>
+</html>

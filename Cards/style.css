@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#fcfcfc;
+}
+.container{
+     display:flex;
+    justify-content:center;
+    align-items:center;
+    max-width: 75rem;
+    flex-wrap: wrap;
+    padding: 3rem 0;
+
+}
+.container .card{
+    position: relative;
+    width: 30rem;
+    height:440px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
+                inset -5px -5px 5px rgba(255,255,255,0.5),
+                5px 5px 5px rgba(0,0,0,0.05),
+                 -5px -5px 5px rgba(255,255,255,0.5);
+                 border-radius:15px;
+                 margin:30px;
+} 
+.container .card .box{
+    position: absolute;
+    top:20px;
+    left:20px;
+    right:20px;
+    bottom:20px;
+    background:#ebf5fc;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+      display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.5s;
+}
+
+.container .card .box .content{
+    padding:20px;
+    text-align: center;
+}
+.container .card .box .content h1{
+    position: absolute;
+    top: -20px;
+    right:10px;
+    font-size: 6em;
+    color:rgba(206, 197, 197, 0.651);
+    transition:0.5s;
+    pointer-events: none;
+}
+.container .card:hover .box .content h1{
+   color:rgba(247, 236, 236, 0.5);
+}
+.container .card .box .content h2{
+    font-size:1.1em;
+    color:#777;
+    transition:0.5s;
+    z-index: 1;
+}
+.container .card .box .content p{
+    font-size: 1em;
+    font-weight: 300;
+    color:#777;
+    z-index:1;
+    transition:0.5s;
+}
+.container .card .box .content a{
+    position: relative;
+    display: inline-block;
+    padding:8px 20px;
+    margin-top: 20px;
+    color:#fff;
+    background:#03a9f4;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.container .card:hover .box .content a{
+    background: #ff56ff;
+}
+
+.container .card:hover .box {
+    transform: translateY(-50px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+   background:linear-gradient(45deg, rgb(2, 102, 77),rgb(255, 161, 161));
+}
+
+.container .card:hover .box .content h2,.container .card:hover .box .content p{
+color: #fff;
+}
+p{
+    text-align: left;
+}

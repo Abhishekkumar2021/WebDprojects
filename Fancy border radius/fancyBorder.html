@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fancy border radius</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			body {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.card {
+				width: 600px;
+				height: 600px;
+				max-width: 96%;
+				border-radius: 50%;
+				background: skyblue;
+				box-shadow: 20px 20px 15px rgba(116, 188, 216, 0.5);
+				transition: 1s ease all;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card"> </div>
+	</body>
+	<script>
+		let i = 0;
+		setInterval(() => {
+			const card = document.querySelector(".card");
+			const d1 = Math.floor(Math.random() * 60) + 40;
+			const d2 = Math.floor(Math.random() * 60) + 40;
+			const d3 = Math.floor(Math.random() * 60) + 40;
+			const d4 = Math.floor(Math.random() * 60) + 40;
+			const d5 = Math.floor(Math.random() * 60) + 40;
+			const d6 = Math.floor(Math.random() * 60) + 40;
+			const d7 = Math.floor(Math.random() * 60) + 40;
+			const d8 = Math.floor(Math.random() * 60) + 40;
+			// card.style.borderRadius = `${d1}% ${100-d1}% ${d3}% ${100-d3}% / ${100-d4}% ${d2}% ${100-d2}% ${d4}%`;
+			card.style.borderRadius = `${d1}% ${d2}% ${d3}% ${d4}% / ${d5}% ${d6}% ${d7}% ${d8}%`;
+			// console.log(d1, d2, d3, d4);
+		}, 1000);
+	</script>
+</html>

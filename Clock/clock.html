@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing :border-box;
+        }
+        .center {
+              display:flex;
+              justify-content:center;
+              align-items:center;
+        }
+        .container {
+            width:100%;
+            height:100vh;
+            background:rgb(255, 255, 255);
+            background-position: center;
+            background-size: cover;
+        }
+        .box{
+           position:absolute;
+            width:600px;
+            height:600px;
+            background:rgb(255, 255, 255);
+            border-radius:50%;
+            box-shadow: 0px 0px 30px rgba(8, 8, 8, 0.151);
+        }
+        .needle{
+            position:absolute;
+            width:10px;
+            height:300px;
+            background:rgb(243, 198, 52);
+            border-radius:50%;
+            z-index:50;
+            
+        }
+        .needle:after{
+            content: '';
+            position:absolute;
+            width:100%;
+            height:50%;
+            background:rgb(255, 255, 255);
+            bottom:0;
+            
+        }
+        .hour{
+            height:300px;
+            width:15px;
+            /* animation:rotate 43200s linear infinite; */
+        }
+        .seconds{
+            width:8px;
+            height:500px;
+            /* animation:rotate 60s linear infinite; */
+        }
+        .minute{
+            height:400px;
+            width:11px;
+            /* animation:rotate 3600s linear infinite; */
+        }
+        .pin{
+            width:35px;
+            height:35px;
+            background:rgb(248, 235, 59);
+            border-radius:50%;
+            z-index:100;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.226);
+        }
+       
+        .number{
+            position:absolute;
+            font-family: Montserrat;
+            font-size:40px;
+            color:rgba(160, 10, 10, 0.76);
+                      font-weight: 600;
+            
+        }
+        .twelve{
+            top:15px;
+        }
+        .six{
+            bottom:15px;
+        }
+        .nine{
+            left:15px;
+        }
+        .three{
+            right:15px;
+        }
+        .digital{
+            position:absolute;
+            bottom:50px;
+             font-family: Fira Code;
+             font-weight: 100;
+             color:rgb(99, 96, 96);
+            font-size:50px;
+            padding:10px 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.151),inset 10px 10px 10px rgba(0, 0, 0, 0.062);
+            border-radius:10px;
+            background:white;
+        }
+        .brand{
+            position:absolute;
+            color:rgba(160, 10, 10, 0.76);
+            font-size:50px;
+            transform:translateY(100px);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        } 
+     .stopwatch{
+         width:800px;
+         height:900px;
+         background:rgb(255, 255, 255);
+         border-radius:20px;
+         box-shadow: 0 0 40px rgba(92, 103, 107, 0.308);
+     }
+     .screen{
+         font-size:40px;
+         width:100%;
+         height:800px;
+         background:rgb(243, 198, 52);
+         color:white;
+         border-radius:20px 20px 0 0;
+          display:flex;justify-content:center;
+          flex-direction: column;
+          align-items: center;
+          font-family:Fira Code;
+     }
+     .buttons{
+         width:100%;
+         display:flex;
+         justify-content:space-evenly;
+        
+     }
+.button{
+    width:30%;
+    height:80px;
+    margin:10px auto;
+    border-radius:10px;
+     display:flex;justify-content:center;
+     align-items: center;
+     font-family:'Segoe UI', Verdana;
+     font-size:25px;
+     font-weight:400;
+     box-shadow:0 0 10px rgba(3, 23, 59, 0.397);
+}
+.button:hover{
+    background:rgb(248, 212, 53);
+    color:black;
+}
+
+.watch{
+    width:720px;
+    height:720px;
+    background:white;
+    border-radius: 50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.msec{
+    position:absolute;
+    height:500px;
+    /* animation:rotate 1s linear infinite; */
+}
+   @keyframes rotate{
+   0%{
+   transform:rotate(0deg);
+   }
+   100%{
+   transform:rotate(359deg);
+   }
+   }
+   img{
+       width:200px;
+       z-index:0;
+   }
+.right{ 
+    position:absolute;
+    left:1330px;
+}
+    </style>
+</head>
+<body>
+    <div class="container center">
+      
+   
+        <div class="box center">
+            <div class="twelve number">
+                XII
+            </div>
+            <div class="six number">
+                VI
+            </div>
+            <div class="three number">
+                III
+            </div>
+            <div class="nine number">
+                IX
+            </div>
+            <div class="hour needle">
+
+            </div>
+            <div class="minute needle">
+
+            </div>
+            <div class="seconds needle">
+
+            </div>
+            <div class="pin">
+
+            </div>
+            <div class="brand">
+                <img src="https://www.marketing91.com/wp-content/uploads/2016/11/fastrack.jpg" alt="">
+            </div>
+        </div>
+         <div class="digital">
+
+         </div>
+        
+         </div>
+        
+
+    </div>
+    <div class="container center">
+          <div class="stopwatch">
+              <div class="screen">
+                  <div class="watch">
+                      <div class="needle msec">
+
+                      </div>
+                      <div class="pin">
+
+                      </div>
+                      <div class="brand">
+                          <img src="https://www.marketing91.com/wp-content/uploads/2016/11/fastrack.jpg" alt="">
+                      </div>
+                  </div>
+
+                  <div class="content">
+                      0 : 0 : 0
+                  </div>
+
+              </div>
+              <div class="buttons">
+                  <div class="start button">
+                      PLAY
+                  </div>
+                  <div class="pause button">
+                      PAUSE
+                  </div>
+                  <div class="reset button">
+                      RESET
+                  </div>
+              </div>
+
+          </div>
+    </div>
+    <script>
+        
+        
+        
+        const hour = document.querySelector('.hour');
+        const minutes = document.querySelector('.minute');
+        const seconds = document.querySelector('.seconds');
+       const digital = document.querySelector('.digital');
+       const container = document.querySelector('.container');
+        setInterval(() => {
+             let h = new Date().getHours();
+             let m = new Date().getMinutes();
+             let s = new Date().getSeconds();
+             if(h>=12)
+             h=h-12;
+             seconds.style.transform = `rotate(${s*6}deg)`;
+             minutes.style.transform = `rotate(${6*m+0.1*s}deg)` ;
+             hour.style.transform = `rotate(${30*h+0.5*m+0.00833*s}deg)` ;
+             digital.innerHTML = `${h} : ${m} : ${s}`;
+        }, 1000);
+        let min=0,sec=0,msec=0;
+        const screen = document.querySelector('.screen .content');
+       const start = document.querySelector('.start');
+       const reset = document.querySelector('.reset')
+       const pause = document.querySelector('.pause');
+       let startID;
+      start.addEventListener('click', () => {
+            startID = setInterval(()=>{
+            msec++;
+            if(msec==100){
+            msec=0;
+            sec++;
+            }
+            if(sec==59){
+            sec=0;
+            min++;
+            }
+
+            screen.innerHTML=`${min} : ${sec} : ${msec} `;
+            },10)
+       })
+       pause.addEventListener('click',()=>{
+           clearInterval(startID);
+        
+       })
+       reset.addEventListener('click', () => {
+           msec=0;
+           sec=0;
+           min=0;
+           clearInterval(startID);
+         screen.innerHTML=`${min} : ${sec} : ${msec} `;
+
+       })
+       const needle = document.querySelector('.msec');
+       setInterval(() => {
+           needle.style.transform= `rotate(${msec*3.6}deg)`;
+       },10)
+
+    </script>
+    
+</body>
+</html>
