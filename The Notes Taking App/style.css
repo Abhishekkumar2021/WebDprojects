@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&family=Poppins:wght@200;300&display=swap');
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
 }
 .container {
 	width: 100vw;
@@ -28,7 +30,7 @@
 	border-radius: 10px;
 	padding: 80px 20px 10px 20px;
 	font-size: 20px;
-	font-family: Fira Code;
+
 	background: hsla(194, 29%, 26%, 0.74);
 	color: skyblue;
 	border: 2px solid hsla(194, 29%, 26%, 0.74);
@@ -64,7 +66,7 @@
 	transition: 0.3s ease all;
 	cursor: pointer;
 	z-index: 2000;
-	font-family: Fira code;
+
 }
 .create:active {
 	transform: scale(0.6);
@@ -105,7 +107,7 @@
 	border-radius: 10px;
 	background: rgb(61, 145, 134);
 	font-size: 28px;
-	font-family: Fira Code;
+
 	color: rgb(162, 233, 203);
 }
 .search {
@@ -118,7 +120,7 @@
 	transition: 0.3s ease all;
 	cursor: pointer;
 	z-index: 2000;
-	font-family: Fira code;
+
 	display: flex;
 }
 .searchbar {
@@ -130,7 +132,7 @@
 	border-radius: 10px 0 0 10px;
 	background: hsla(194, 29%, 26%, 0.74);
 	font-size: 25px;
-	font-family: Fira Code;
+
 	color: skyblue;
 }
 .searchButton {
@@ -160,7 +162,7 @@
 	transition: 0.3s ease all;
 	cursor: pointer;
 	z-index: 2000;
-	font-family: Fira code;
+
 	padding: 10px 15px;
 	color: skyblue;
 	background: hsla(194, 29%, 26%, 0.74);
