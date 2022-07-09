@@ -20,7 +20,7 @@
 
     h1 {
         text-shadow: 7px 7px 0 gray;
-        font-size: 150px;
+        font-size: 50px;
         background: rgb(255, 255, 255);
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.685);
         padding: 10px 20px;
@@ -39,14 +39,14 @@
 
     @media (max-width:1200px) and (min-width:769px) {
         h1 {
-            font-size: 90px;
+            font-size: 30px;
             text-shadow: 5px 5px 0 gray;
         }
     }
 
     @media only screen and (max-width:768px) {
         h1 {
-            font-size: 60px;
+            font-size: 40px;
             text-shadow: 3px 3px 0 gray;
         }
     }
