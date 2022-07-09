@@ -19,7 +19,7 @@
     }
 
     h1 {
-        text-shadow: 7px 7px 0 gray;
+        text-shadow: 2px 2px 0 gray;
         font-size: 50px;
         background: rgb(255, 255, 255);
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.685);
