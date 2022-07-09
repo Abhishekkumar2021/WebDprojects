@@ -20,5 +20,5 @@ function randomColor() {
     const r = Math.floor(Math.random() * 256) + 1;
     const g = Math.floor(Math.random() * 256) + 1;
     const b = Math.floor(Math.random() * 256) + 1;
-    return `rgba(${r},${g},${b})`;
+    return `rgba(${r},${g},${b},0.3)`;
 }

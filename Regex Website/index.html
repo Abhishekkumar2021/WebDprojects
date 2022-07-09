@@ -20,13 +20,13 @@
 				<div class="title">
 					Defining the string in which we have to search the regExp.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let string = "Hello there, I am Abhishek Kumar. I hope you are fine there.";
             </code></pre>
 				<div class="title">
 					Defining the regex directly, and printing it source value.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let regDirect = /I/;
 console.log(regDirect.source);
             </code></pre>
@@ -36,7 +36,7 @@ I
 				<div class="title">
 					Defining a regex using its constructor function.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 const toFind = 'I';
 let regConstructor = new RegExp(toFind);
 console.log(regConstructor);
@@ -48,7 +48,7 @@ console.log(regConstructor);
 					The <span>test()</span> function returns true if the given regex is
 					present in the string passed to
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 const isPresent = regDirect.test(string);
 console.log(isPresent);
             </code></pre>
@@ -60,7 +60,7 @@ true
 					returns true if any one of the regex matches in the string passed to
 					it.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let petString = 'Abhishek has a pet cat.';
 let petRegex = /cat|dog|mouse|/;
 let result = petRegex.test(petString);
@@ -73,7 +73,7 @@ true
 					If we want to ignore case then we have to add a flag
 					<span>i</span> after our regex;
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let newString = 'ThIs Is tO test The case InsenstIVity';  
 let caseRegex = /this/i;
 let result = caseRegex.test(newString);
@@ -85,7 +85,7 @@ true
 				<div class="title">
 					Adding the flags using the constructor function
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let searchTerm = 'this';
 let regex = new RegExp(searchTerm, 'i');
             </code></pre>
@@ -96,7 +96,7 @@ let regex = new RegExp(searchTerm, 'i');
 					<span>flag</span> applied is global) in the string, else it returns
 					null.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let extractString = "Hey there, Extract the word 'hello' hello from the string";
 let extractRegex = new RegExp('hello');
 let output = extractString.match(extractRegex);
@@ -114,7 +114,7 @@ console.log(output);
 					If we add flag <span>g</span> then it returs an array of matches it
 					found.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let extractString = "Hey there, Extract the word 'hello' hello from the string";
 let extractRegex = new RegExp('hello','g');
 let output = extractString.match(extractRegex);
@@ -124,7 +124,7 @@ console.log(output);
 [ 'hello', 'hello' ]
             </code></pre>
 				<div class="title"> multiple matches with case insestivity. </div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let starString = 'Twinkle twinkle little star';
 let starRegex = new RegExp('twinkle','ig');
 const starResult = starString.match(starRegex);
@@ -137,7 +137,7 @@ console.log(starResult);
 					The dot/period <span>(.)</span> is a wildcard character used for
 					pattern matching.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let huString = 'hum, hug';
 let huRegex = /hu./g
 const huresult = huString.match(huRegex);
@@ -156,7 +156,7 @@ console.log(unresult);
 					The period <span>(.)</span> matches with any of the character but we
 					can also provide a group of character to match as follows.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let vowelString = 'hey there, Are you fine ?'
 let vowelRegex = /./g;
 let vowelResult = vowelString.match(vowelRegex);
@@ -185,7 +185,7 @@ console.log(vowelResult);
 					Check for the character in some range using <span>-</span> between the
 					min and max.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let fullSentence = 'The quick brown fox jumps over the lazy dog';
 let alphabetRegex = /[a-z]/gi;
 const alphabetResult = fullSentence.match(alphabetRegex);
@@ -201,7 +201,7 @@ console.log(alphabetResult);
 ]
             </code></pre>
 				<div class="title"> Match numbers and letters in a range. </div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let alphabetsAndNumberString = 'The blueberry pie 3.145672809 is delicious.'
 let alphabetsAndNumberRegex = /[2-6h-u]/gi;
 const alphabetsAndNumberResult = alphabetsAndNumberString.match(alphabetsAndNumberRegex);
@@ -219,7 +219,7 @@ console.log(alphabetsAndNumberResult);
 				<div class="title">
 					Matching all except some using <span>^</span> character.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let exceptNumbersStrig = '1234567 hello there, 3 peoples are chasing me! '
 let exceptNumbersRegex = /[^0-9]/gi;
 const exceptNumbersResult = exceptNumbersStrig.match(exceptNumbersRegex);
@@ -237,7 +237,7 @@ console.log(exceptNumbersResult);
 				<div class="title">
 					Match characters that ocuurs one or more times.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let difficultString = 'Mississippi';
 let difficultRegex = /s+/ig;
 const difficultResult = difficultString.match(difficultRegex);
@@ -247,7 +247,7 @@ console.log(difficultResult);
 [ 'ss', 'ss' ]
             </code></pre>
 				<div class="title"> Match zero or more times. </div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let zeroOrMoreString = 'GooooooooooooooalGoooooooooalG';
 let zeroOrMoreRegex = /Go*/g;
 const zeroOrMoreResult = zeroOrMoreString.match(zeroOrMoreRegex);
@@ -260,7 +260,7 @@ console.log(zeroOrMoreResult);
 					Find characters with the <span>lazy</span> matching. Which finds the
 					smallest length match.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let lazyString = 'titanic';
 let lazyRegex = /t[a-z]*?i/
 let lazyResult = lazyString.match(lazyRegex);
@@ -273,7 +273,7 @@ console.log(lazyResult);
 					Find characters with the <span>Greedy</span> matching. Which finds the
 					largest length match.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let greedyString = 'titanic';
 let greedyRegex = /t[a-z]*i/
 let greedyResult = greedyString.match(greedyRegex);
@@ -288,7 +288,7 @@ console.log(greedyResult);
 					matches and starting or ending at the same place then the smaller
 					length one will be cosidered.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let greedyString = 'titanic';
 let greedyRegex = /t[a-z]*i/g
 let greedyResult = greedyString.match(greedyRegex);
@@ -298,7 +298,7 @@ console.log(greedyResult);
 [ 'ti', 'tani' ]
             </code></pre>
 				<div class="title"> Greedy matching Example... </div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let htmlString = '<h1>Hello there, I am glad here.</h1>';
 let htmlRegex = /<.*>/g;
 const htmlResult = htmlString.match(htmlRegex);
@@ -308,7 +308,7 @@ console.log(htmlResult);
 [ '&lt;h1>Hello there, I am glad here.&lt;/h1>' ]
             </code></pre>
 				<div class="title"> Lazy matching Example... </div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let htmlString = '<h1>Hello there, I am glad here.</h1>';
 let htmlRegex = /<.*?>/g;
 const htmlResult = htmlString.match(htmlRegex);
@@ -320,7 +320,7 @@ console.log(htmlResult);
 				<div class="title">
 					Checking if a string starts with a given word or not.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let beginString = 'Hey there, I am fine here.';
 let beginRegex = /^Hey/;
 const beginResult = beginRegex.test(beginString);
@@ -332,7 +332,7 @@ true
 				<div class="title">
 					Checking if a string ends with a given word or not.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let endString = 'Hey there, I am fine here.';
 let endRegex = /here.$/;
 const endResult = endRegex.test(endString);
@@ -345,7 +345,7 @@ true
 					Match all letters, numbers and an underscore i.e. [A-Z],[a-z],[0-9],
 					and _
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let wString = 'Aquick brown fox jumps over a lazy dog with 5_________'
 let wRegex = /\w/g;
 let wResult = wString.match(wRegex);
@@ -365,7 +365,7 @@ console.log(wResult);
 					Match all except letters, numbers and an underscore i.e. except
 					[A-Z],[a-z],[0-9], and _
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let W_String = 'Aquick brown fox jumps over a lazy dog with 5_________'
 let W_Regex = /\W/g;
 let W_Result = W_String.match(W_Regex);
@@ -381,7 +381,7 @@ console.log(W_Result);
 				<div class="title">
 					Match all numbers using a shorthand <span>\d</span>
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let digitString = '1234567890_abcgsfs'
 let digitRegex = /\d/g;
 let digitResult = digitString.match(digitRegex);
@@ -397,7 +397,7 @@ console.log(digitResult);
 				<div class="title">
 					Match all non-numbers using a shorthand notaion <span>\D</span>
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let nonDigitString = '1234567890_abcgsfs'
 let nonDigitRegex = /\D/g;
 let nonDigitResult = nonDigitString.match(nonDigitRegex);
@@ -414,7 +414,7 @@ console.log(nonDigitResult);
 					<span>Q. </span>you are given with a username, and some conditions,
 					you have to tell whether that username satisfies the given conditions.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 /*
 The conditions are :
 1. If there are numbers they must be at the end.
@@ -432,7 +432,7 @@ true
 				<div class="title">
 					Match the whitespaces characters i.e the space, tab, newline, etc.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let whitespaceString = 'I am happy now. \n what you want there';
 let whitespaceRegex = /\s/g;
 let whitespaceResult = whitespaceString.match(whitespaceRegex);
@@ -446,7 +446,7 @@ console.log(whitespaceResult);
 ]
             </code></pre>
 				<div class="title"> Match all non-whitespaces characters. </div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let nonWhitespaceString = 'I am happy now. \n what you want there';
 let nonWhitespaceRegex = /\S/g;
 let nonWhitespaceResult = nonWhitespaceString.match(nonWhitespaceRegex);
@@ -465,7 +465,7 @@ console.log(nonWhitespaceResult);
 					Quantity specifiers areusedto match some characters with their number
 					and for this we use <span>{a,b}</span> where a is min and b is max.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let quantityString = 'ohhhhhhhhhhhh no, are you mad. ohhhh ';
 let quantityRegex = /oh{3,5}/g;
 let quantityResult = quantityString.match(quantityRegex);
@@ -478,7 +478,7 @@ console.log(quantityResult);
 					Exact number of matches using <span>{x}</span> where x is count of
 					number.
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let quantityString = 'ohhhhhhhhhhhh no, are you mad. ohhhh ';
 let quantityRegex = /oh{4}/g;
 let quantityResult = quantityString.match(quantityRegex);
@@ -491,7 +491,7 @@ console.log(quantityResult);
 					check with some optional characters using <span>?</span> after the
 					characters
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let optionalString = 'favorite, favourite';
 let optionalRegex = /favou?rite/g;
 let optionalResult = optionalString.match(optionalRegex);
@@ -504,7 +504,7 @@ console.log(optionalResult);
 					Positive and negative look aheads using
 					<span>(?=someCharacter)</span> and <span>(?=someCharacter)</span>
 				</div>
-				<pre><code class="languaje-js">
+				<pre><code class="language-js">
 let lookAheadString = 'quitquit';
 let lookAheadPositiveRegex = /qu(?=i)/g;
 let lookAheadResult = lookAheadString.match(lookAheadPositiveRegex);
